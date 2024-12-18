@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --theme-color:#71d4e5;
+    overflow-x: hidden;
+}
+.loader{
+    height: 100dvh;
+    width: 100vw;
+    background-color: var(--theme-color);
+    background-image: url("./assets/doodle.png");
+    background-size: cover;
+}
+.logo{
+    width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.progress{
+    width: 304px;
+    height: 14px;
+    border:3px solid rgba(255,225,225,0.75);
+    border-radius: 30px;
+    position: absolute;
+    top: calc(50% + 150px);
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: afterload 0.5s ease-in 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+@keyframes afterload{
+    0%{
+        width: 304px;
+        height: 14px;
+        top: calc(50% + 150px);
+        transform: translate(-50%,-50%);
+        left: 50%;
+        border-radius: 30px;
+    }
+    100%{
+        width: 100vw;
+        height: 100dvh;
+        left: 0;
+        top: 0;
+        transform: translate(0%,0%);
+        border-radius: 0px;
+        position: relative;
+    }
+}
+.progress::after{
+    content: "";
+    width: 0px;
+    height: 10px;
+    background-color:rgba(255,225,225,0.75);
+    display: block;
+    border-radius: 30px;
+    position: absolute;
+    top: 2;
+    left: 2;
+    animation:load 3s linear 1;
+    animation-fill-mode: forwards;
+}
+@keyframes load {
+    0%{
+        width: 0px;
+    }
+    99%{
+        opacity: 1;
+    }
+    100%{
+        width: 300px;
+        opacity: 0;
+    }
+}
+.page{
+    width: 100%;
+}
+.menu{
+    height: 0;
+    overflow: hidden;
+    animation: show 0.1s linear 1;
+    animation-fill-mode: forwards;
+    animation-delay: 3.5s;
+}
+@keyframes show {
+    100%{
+        height: auto;
+    }
+}
