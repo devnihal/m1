@@ -17,5 +17,16 @@
         <img src="./assets/3.png" alt="" class="page">
         <img src="./assets/4.png" alt="" class="page">
     </div>
+    <script>
+        window.onload = function() {
+  setTimeout(function() {
+    var menuSection = document.getElementById('menu');
+    if (menuSection) {
+      menuSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 4000); // 12000ms = 12 seconds
+};
+
+    </script>
 </body>
 </html>
